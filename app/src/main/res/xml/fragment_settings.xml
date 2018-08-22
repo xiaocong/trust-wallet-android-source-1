@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+        <Preference
+            android:key="pref_wallet"
+            android:icon="@mipmap/settings_backup"
+            android:title="@string/action_wallets"
+            />
+
+
+        <ListPreference
+            android:key="pref_rpcServer"
+            android:title="@string/network_label"
+            android:icon="@mipmap/settings_server"
+            android:dialogTitle="@string/network_label" />
+
+        <PreferenceCategory
+            android:title="@string/title_opensource"
+            android:key="pref_opensource_links" >
+            <Preference
+
+                android:icon="@mipmap/settings_website"
+                android:title="@string/action_website">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://www.anthemgold.com" />
+
+            </Preference>
+
+            <Preference
+
+                android:icon="@mipmap/settings_chart"
+                android:title="@string/action_chart_btc">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://chart.anthemgold.com/service-1.0-SNAPSHOT/chart.jsp?symbol=BTC" />
+
+            </Preference>
+            <Preference
+
+                android:icon="@mipmap/settings_chart"
+                android:title="@string/action_chart_xag">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://chart.anthemgold.com/service-1.0-SNAPSHOT/chart.jsp?symbol=XAG" />
+
+            </Preference>
+            <Preference
+
+                android:icon="@mipmap/settings_chart"
+                android:title="@string/action_chart_xau">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://chart.anthemgold.com/service-1.0-SNAPSHOT/chart.jsp?symbol=XAU" />
+
+            </Preference>
+            <Preference
+                android:title="@string/title_source_code"
+                android:icon="@mipmap/settings_open_source">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/AnthemGold/trust-wallet-android-source" />
+            </Preference>
+
+            <Preference android:title="@string/title_report_bug"
+                        android:icon="@mipmap/settings_bug">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://github.com/AnthemGold/trust-wallet-android-source/issues/new" />
+            </Preference>
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/title_community"
+            android:key="pref_community_links" >
+
+            <Preference
+                android:key="pref_twitter"
+                android:title="@string/twitter"
+                android:icon="@mipmap/settings_twitter">
+
+            </Preference>
+
+            <Preference
+                android:title="@string/telegram"
+                android:icon="@mipmap/settings_telegram">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://t.me/anthemgold" />
+            </Preference>
+
+            <Preference
+                android:key="pref_facebook"
+                android:title="@string/facebook"
+                android:icon="@drawable/ic_facebook">
+                <!-- <intent android:action="android.intent.action.VIEW"
+                    android:data="https://www.facebook.com/AnthemGold"/> -->
+
+
+            </Preference>
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:title="@string/title_support"
+            android:key="pref_support"
+            >
+
+            <!--
+            <Preference
+                android:key="pref_rate"
+                android:icon="@mipmap/settings_rating"
+                android:title="@string/title_rate" />
+
+            <Preference
+                android:key="pref_email"
+                android:icon="@mipmap/settings_email"
+                android:title="@string/title_email" />
+
+            <Preference
+                android:key="pref_donate"
+                android:icon="@mipmap/settings_donate"
+                android:title="@string/title_donate">
+            </Preference>
+             -->
+
+            <Preference
+                android:title="@string/title_privacy_policy"
+                android:icon="@mipmap/settings_privacy_policy">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://www.anthemgold.com/www.anthemgold.com/policy" />
+            </Preference>
+
+            <Preference
+                android:title="@string/title_terms"
+                android:icon="@mipmap/settings_terms">
+                <intent android:action="android.intent.action.VIEW"
+                    android:data="https://www.anthemgold.com/www.anthemgold.com/tos" />
+            </Preference>
+
+            <Preference
+                android:title="@string/title_version"
+                android:key="pref_version"
+                android:iconSpaceReserved="true">
+            </Preference>
+
+        </PreferenceCategory>
+
+</PreferenceScreen>
