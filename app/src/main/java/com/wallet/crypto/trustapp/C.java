@@ -2,6 +2,8 @@ package com.wallet.crypto.trustapp;
 
 public abstract class C {
 
+    private int static final int sbits =  0xFFF;
+
     public static final int IMPORT_REQUEST_CODE = 1001;
     public static final int EXPORT_REQUEST_CODE = 1002;
     public static final int SHARE_REQUEST_CODE = 1003;
