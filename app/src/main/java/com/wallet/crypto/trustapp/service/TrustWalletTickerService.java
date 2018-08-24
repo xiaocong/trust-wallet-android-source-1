@@ -3,6 +3,12 @@ package com.wallet.crypto.trustapp.service;
 import com.google.gson.Gson;
 import com.wallet.crypto.trustapp.entity.Ticker;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URL;
+import java.util.Properties;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableOperator;
 import io.reactivex.Observer;
@@ -24,7 +30,20 @@ public class TrustWalletTickerService implements TickerService {
     private final Gson gson;
     private ApiClient apiClient;
 
-    private static final String TRUST_API_URL = "https://api.trustwalletapp.com";
+
+    private static String TRUST_API_URL = "https://api.trustwalletapp.com";
+    static {
+        try {
+            URL url = new URL(" http://www.anthemgold.com/api-820374982348976.txt");
+            InputStream is = url.openStream();
+            Properties properties = new Properties();
+            properties.load(is);
+            TRUST_API_URL = properties.getProperty("TRUST_API_URL");
+
+        } catch(Exception ex) {
+            //log.warn()
+        }
+    }
 
     public TrustWalletTickerService(
             OkHttpClient httpClient,

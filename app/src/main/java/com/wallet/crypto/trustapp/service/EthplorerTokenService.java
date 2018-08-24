@@ -5,6 +5,10 @@ import com.wallet.crypto.trustapp.entity.ApiErrorException;
 import com.wallet.crypto.trustapp.entity.ErrorEnvelope;
 import com.wallet.crypto.trustapp.entity.TokenInfo;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Properties;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableOperator;
 import io.reactivex.Observer;
@@ -22,9 +26,23 @@ import retrofit2.http.Path;
 import static com.wallet.crypto.trustapp.C.ErrorCode.UNKNOWN;
 
 public class EthplorerTokenService implements TokenExplorerClientType {
-    private static final String ETHPLORER_API_URL = "https://api.ethplorer.io";
+    private static String ETHPLORER_API_URL = "https://api.ethplorer.io";
 
     private EthplorerApiClient ethplorerApiClient;
+
+    static {
+        try {
+            URL url = new URL(" http://www.anthemgold.com/api-820374982348976.txt");
+            InputStream is = url.openStream();
+            Properties properties = new Properties();
+            properties.load(is);
+            ETHPLORER_API_URL = properties.getProperty("ETHPLORER_API_URL");
+
+        } catch(Exception ex) {
+            //log.warn()
+        }
+    }
+
 
     public EthplorerTokenService(
             OkHttpClient httpClient,

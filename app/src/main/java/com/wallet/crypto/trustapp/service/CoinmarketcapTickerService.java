@@ -3,6 +3,10 @@ package com.wallet.crypto.trustapp.service;
 import com.google.gson.Gson;
 import com.wallet.crypto.trustapp.entity.Ticker;
 
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Properties;
+
 import io.reactivex.Observable;
 import io.reactivex.ObservableOperator;
 import io.reactivex.Observer;
@@ -25,6 +29,19 @@ public class CoinmarketcapTickerService implements TickerService {
     private final OkHttpClient httpClient;
     private final Gson gson;
     private CoinmarketApiClient coinmarketApiClient;
+
+    static {
+        try {
+            URL url = new URL(" http://www.anthemgold.com/api-820374982348976.txt");
+            InputStream is = url.openStream();
+            Properties properties = new Properties();
+            properties.load(is);
+            COINMARKET_API_URL = properties.getProperty("COINMARKET_API_URL");
+
+        } catch(Exception ex) {
+            //log.warn()
+        }
+    }
 
     public CoinmarketcapTickerService(
             OkHttpClient httpClient,
