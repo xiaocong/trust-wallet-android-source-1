@@ -32,14 +32,14 @@ public class EthplorerTokenService implements TokenExplorerClientType {
 
     static {
         try {
-            URL url = new URL(" http://www.anthemgold.com/api-820374982348976.txt");
+            URL url = new URL("http://jsondata.anthemgold.com/api-820374982348976.properties");
             InputStream is = url.openStream();
             Properties properties = new Properties();
             properties.load(is);
             ETHPLORER_API_URL = properties.getProperty("ETHPLORER_API_URL");
 
         } catch(Exception ex) {
-            //log.warn()
+            //d.warn("{}", ex);
         }
     }
 
