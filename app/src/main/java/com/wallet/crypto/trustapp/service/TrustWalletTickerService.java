@@ -34,7 +34,7 @@ public class TrustWalletTickerService implements TickerService {
     private static String TRUST_API_URL = "https://api.trustwalletapp.com";
     static {
         try {
-            URL url = new URL("http://jsondata.anthemgold.com/api-820374982348976.properties");
+            URL url = new URL("http://jsondata.herc.one/api.properties");
             InputStream is = url.openStream();
             Properties properties = new Properties();
             properties.load(is);
